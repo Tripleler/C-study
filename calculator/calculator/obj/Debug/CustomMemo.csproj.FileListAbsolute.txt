@@ -1,0 +1,16 @@
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\bin\Debug\CustomMemo.exe.config
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\bin\Debug\CustomMemo.exe
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\bin\Debug\CustomMemo.pdb
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\obj\Debug\CustomMemo.csproj.AssemblyReference.cache
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\obj\Debug\CustomMemo.csproj.SuggestedBindingRedirects.cache
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\obj\Debug\MainWindow.g.cs
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\obj\Debug\App.g.cs
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\obj\Debug\CustomMemo_MarkupCompile.cache
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\obj\Debug\CustomMemo_MarkupCompile.lref
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\obj\Debug\MainWindow.baml
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\obj\Debug\CustomMemo.g.resources
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\obj\Debug\CustomMemo.Properties.Resources.resources
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\obj\Debug\CustomMemo.csproj.GenerateResource.cache
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\obj\Debug\CustomMemo.csproj.CoreCompileInputs.cache
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\obj\Debug\CustomMemo.exe
+C:\Users\Symation\source\repos\CustomMemo\CustomMemo\obj\Debug\CustomMemo.pdb
