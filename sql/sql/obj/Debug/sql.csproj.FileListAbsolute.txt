@@ -1,0 +1,16 @@
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\sql.csproj.AssemblyReference.cache
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\sql.csproj.SuggestedBindingRedirects.cache
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\MainWindow.g.cs
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\App.g.cs
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\sql_MarkupCompile.cache
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\sql_MarkupCompile.lref
+C:\Users\Symation\source\repos\sql\sql\bin\Debug\sql.exe.config
+C:\Users\Symation\source\repos\sql\sql\bin\Debug\sql.exe
+C:\Users\Symation\source\repos\sql\sql\bin\Debug\sql.pdb
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\MainWindow.baml
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\sql.g.resources
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\sql.Properties.Resources.resources
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\sql.csproj.GenerateResource.cache
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\sql.csproj.CoreCompileInputs.cache
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\sql.exe
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\sql.pdb
