@@ -6,10 +6,25 @@
         xmlns:local="clr-namespace:sql"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        FontSize="16">
+        FontSize="16"
+        Loaded="Window_Loaded">
     <Grid Margin="10">
         <TreeView Name="treeView"
             HorizontalAlignment="Left"
             Width="300" />
+        <TreeView>
+            <TreeViewItem Header="Employee1">
+                <TreeViewItem Header="Jesper"/>
+                <TreeViewItem Header="Aaberg"/>
+                <TreeViewItem Header="12345"/>
+            </TreeViewItem>
+            <TreeViewItem Header="Employee2">
+                <TreeViewItem Header="Dominik"/>
+                <TreeViewItem Header="Paiha"/>
+                <TreeViewItem Header="98765"/>
+            </TreeViewItem>
+        </TreeView>
+        <DataGrid Name="dataGrid1" AutoGenerateColumns="True">
+        </DataGrid>
     </Grid>
 </Window>

@@ -1,0 +1,16 @@
+D:\git\CS-study\Practice\Practice\obj\Debug\Practice.csproj.AssemblyReference.cache
+D:\git\CS-study\Practice\Practice\obj\Debug\Practice.csproj.SuggestedBindingRedirects.cache
+D:\git\CS-study\Practice\Practice\obj\Debug\MainWindow.g.cs
+D:\git\CS-study\Practice\Practice\obj\Debug\App.g.cs
+D:\git\CS-study\Practice\Practice\obj\Debug\Practice_MarkupCompile.cache
+D:\git\CS-study\Practice\Practice\obj\Debug\Practice_MarkupCompile.lref
+D:\git\CS-study\Practice\Practice\obj\Debug\Practice.exe
+D:\git\CS-study\Practice\Practice\obj\Debug\Practice.pdb
+D:\git\CS-study\Practice\Practice\bin\Debug\Practice.exe.config
+D:\git\CS-study\Practice\Practice\bin\Debug\Practice.exe
+D:\git\CS-study\Practice\Practice\bin\Debug\Practice.pdb
+D:\git\CS-study\Practice\Practice\obj\Debug\MainWindow.baml
+D:\git\CS-study\Practice\Practice\obj\Debug\Practice.g.resources
+D:\git\CS-study\Practice\Practice\obj\Debug\Practice.Properties.Resources.resources
+D:\git\CS-study\Practice\Practice\obj\Debug\Practice.csproj.GenerateResource.cache
+D:\git\CS-study\Practice\Practice\obj\Debug\Practice.csproj.CoreCompileInputs.cache

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Symation\source\repos\notepad\notepad\obj\Debug\
+D:\git\CS-study\notepad\notepad\obj\Debug\
 notepad
 none
 false
 DEBUG;TRACE
-C:\Users\Symation\source\repos\notepad\notepad\App.xaml
+D:\git\CS-study\notepad\notepad\App.xaml
 4-1980154532
 
-81141086462
+9-941002156
 13-1310406943
 FindWindow.xaml;MainWindow.xaml;ucFind.xaml;Window1.xaml;
 
-False
+True
 
