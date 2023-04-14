@@ -1,0 +1,7 @@
+자주 사용하는 것은 글로벌로 빼기
+
+public class _Global
+{
+
+    public static string g_strDBPath = "";
+}

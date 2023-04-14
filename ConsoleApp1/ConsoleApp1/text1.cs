@@ -6,6 +6,7 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(Path.GetFullPath(Path.Combine(System.Environment.CurrentDirectory, "../../../")));
             Console.WriteLine(Expression.ConvertToPostFix("A + B * C"));
             // 출력: A B C * +
 

@@ -53,6 +53,18 @@
                                     </Setter.Value>
                                 </Setter>
                             </Trigger>
+                            <!--<Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                            <GradientStop Color="{Binding Background.Color,
+                                                RelativeSource={RelativeSource TemplatedParent}}" 
+                                                          Offset="0.0" />
+                                            <GradientStop Color="Yellow" Offset="0.9" />
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>-->
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -98,7 +110,7 @@
         </Button>
 
         <Button Grid.Row="2" Grid.Column="1" 
-          Name="Clear" Margin="2">
+          Name="Clear" Margin="2" Click="Clear_Click">
             Clear Name
         </Button>
     </Grid>

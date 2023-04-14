@@ -1,0 +1,18 @@
+스레드
+
+
+UI그리는 작업은 한 클래스가 끝나고 한번에 작업한다.
+따라서 클래스 초반과 끝에 UI작업을 넣으면 의미가 없다.
+
+메인+UI스레드가 하나로 있기 때문에 
+디스패처를 사용한다.
+
+디스패처는 UI스레드에서 끼어들어 메인스레드에서 작업할 수 있도록 해준다.
+Invoke 는 쓰레드가 종료될 때까지 기다린다.
+BeginInvoke는 쓰레드 시작을 호출하고 바로 다음으로 넘어간다.
+
+Thread p_th = null;
+p_th = new Thread(() => {});
+{} 안에 디스패처
+this.BeginInvoke(DispatcherPriority.Normal, new Action(() => {})
+{} 안에 UI 작업

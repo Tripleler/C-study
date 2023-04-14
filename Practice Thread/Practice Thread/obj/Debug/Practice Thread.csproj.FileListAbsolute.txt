@@ -1,0 +1,16 @@
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\bin\Debug\Practice Thread.exe.config
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\bin\Debug\Practice Thread.exe
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\bin\Debug\Practice Thread.pdb
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\obj\Debug\Practice Thread.csproj.AssemblyReference.cache
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\obj\Debug\Practice Thread.csproj.SuggestedBindingRedirects.cache
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\obj\Debug\MainWindow.g.cs
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\obj\Debug\App.g.cs
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\obj\Debug\Practice Thread_MarkupCompile.cache
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\obj\Debug\MainWindow.baml
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\obj\Debug\Practice Thread.g.resources
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\obj\Debug\Practice_Thread.Properties.Resources.resources
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\obj\Debug\Practice Thread.csproj.GenerateResource.cache
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\obj\Debug\Practice Thread.csproj.CoreCompileInputs.cache
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\obj\Debug\Practice Thread.exe
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\obj\Debug\Practice Thread.pdb
+C:\Users\Symation\source\repos\Practice Thread\Practice Thread\obj\Debug\Practice Thread_MarkupCompile.lref

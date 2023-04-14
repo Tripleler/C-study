@@ -24,6 +24,12 @@ namespace Practice
         public MainWindow()
         {
             InitializeComponent();            
-        }       
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new Window1();
+            window.Show();
+        }
     }    
 }
