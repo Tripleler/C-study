@@ -79,8 +79,10 @@ namespace sql
 
                             // db파일명
                             //TreeViewItem tree_db_Name = new TreeViewItem() { Header = "requestlog" };
-                            TreeViewItem tree_db_Name = GetTreeView(System.IO.Path.GetFileNameWithoutExtension(dbPath), dbPath, "DB", @"icon\db.png");
-                            TreeViewItem tree_db_Table = GetTreeView("Tables", dbPath, "Tables", @"icon\table.png");
+                            TreeViewItem tree_db_Name = new TreeViewItem() { Header = System.IO.Path.GetFileNameWithoutExtension(dbPath), Tag="DB", ToolTip=dbPath };
+                            TreeViewItem tree_db_Table = new TreeViewItem() { Header = "Tables", Tag = "Tables", ToolTip = dbPath };
+                            //TreeViewItem tree_db_Name = GetTreeView(System.IO.Path.GetFileNameWithoutExtension(dbPath), dbPath, "DB", @"icon\db.png");
+                            //TreeViewItem tree_db_Tables = GetTreeView("Tables", dbPath, "Tables", @"icon\table.png");
                             //List<(string User_KEY, string RemotIP)> lstTable = new List<(string User_KEY, string RemotIP)>();
 
                             // db 테이블명
