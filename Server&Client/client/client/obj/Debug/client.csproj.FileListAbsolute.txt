@@ -1,0 +1,16 @@
+C:\Users\Symation\source\repos\Server&Client\client\client\bin\Debug\client.exe.config
+C:\Users\Symation\source\repos\Server&Client\client\client\bin\Debug\client.exe
+C:\Users\Symation\source\repos\Server&Client\client\client\bin\Debug\client.pdb
+C:\Users\Symation\source\repos\Server&Client\client\client\obj\Debug\client.csproj.AssemblyReference.cache
+C:\Users\Symation\source\repos\Server&Client\client\client\obj\Debug\client.csproj.SuggestedBindingRedirects.cache
+C:\Users\Symation\source\repos\Server&Client\client\client\obj\Debug\MainWindow.g.cs
+C:\Users\Symation\source\repos\Server&Client\client\client\obj\Debug\App.g.cs
+C:\Users\Symation\source\repos\Server&Client\client\client\obj\Debug\client_MarkupCompile.cache
+C:\Users\Symation\source\repos\Server&Client\client\client\obj\Debug\client_MarkupCompile.lref
+C:\Users\Symation\source\repos\Server&Client\client\client\obj\Debug\MainWindow.baml
+C:\Users\Symation\source\repos\Server&Client\client\client\obj\Debug\client.g.resources
+C:\Users\Symation\source\repos\Server&Client\client\client\obj\Debug\client.Properties.Resources.resources
+C:\Users\Symation\source\repos\Server&Client\client\client\obj\Debug\client.csproj.GenerateResource.cache
+C:\Users\Symation\source\repos\Server&Client\client\client\obj\Debug\client.csproj.CoreCompileInputs.cache
+C:\Users\Symation\source\repos\Server&Client\client\client\obj\Debug\client.exe
+C:\Users\Symation\source\repos\Server&Client\client\client\obj\Debug\client.pdb

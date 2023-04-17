@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\git\CS-study\sql\sql\obj\Debug\
+C:\Users\Symation\source\repos\sql\sql\obj\Debug\
 sql
 none
 false
 DEBUG;TRACE
-D:\git\CS-study\sql\sql\App.xaml
+C:\Users\Symation\source\repos\sql\sql\App.xaml
 41096038411
 
 10-870401079
-47-873998762
+471803529246
 MainWindow.xaml;Themes\Generic.xaml;ucAddDB.xaml;ucLoading.xaml;
 
 False
