@@ -28,7 +28,7 @@ namespace Practice
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-            var window = new Window1();
+            var window = new Window2();
             window.Show();
         }
     }    

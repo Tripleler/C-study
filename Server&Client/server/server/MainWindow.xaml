@@ -6,10 +6,17 @@
         xmlns:local="clr-namespace:server"
         mc:Ignorable="d"
         Title="Server" Height="450" Width="800"
+        Left="200" Top="300"
         Loaded="Window_Loaded">
     <Grid>
-        <RichTextBox x:Name="txt_Status">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <RichTextBox x:Name="txt_Status" Grid.Column="0" IsReadOnly="True" VerticalScrollBarVisibility="Auto">
             
         </RichTextBox>
+        <Button x:Name="btn_Switch" Grid.Column="1" Margin="30" Height="50" VerticalAlignment="Top" Click="btn_Switch_Click" Content="Start">
+        </Button>
     </Grid>
 </Window>

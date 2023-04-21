@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace ConsoleApplication1
 {
@@ -6,88 +7,19 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Path.GetFullPath(Path.Combine(System.Environment.CurrentDirectory, "../../../")));
-            Console.WriteLine(Expression.ConvertToPostFix("A + B * C"));
-            // 출력: A B C * +
-
-            Console.WriteLine(Expression.ConvertToPostFix("( A + B ) * C"));
-            // 출력: A B + C *
-
-            Console.WriteLine(Expression.ConvertToPostFix("( A + B ) * ( C + D )"));
-            // 출력: A B + C D + *
-        }
-    }
-
-    class Expression
-    {
-        public static string ConvertToPostFix(string expStr)
-        {
-            // 1. 수식을 각 토큰별로 구분하여 읽어들인다
-            string[] tokens = expStr.Split(' ');
-
-            string[] ops = new string[] { "+", "-", "*", "/", "(", ")" };
-            Dictionary<string, int> precs = new Dictionary<string, int>
+            string strItem = "배열 슬라이싱 연습";
+            byte[] buffer = Encoding.Default.GetBytes(strItem);
+            foreach (var item in buffer)
             {
-                ["*"] = 2,
-                ["/"] = 2,
-                ["+"] = 1,
-                ["-"] = 1,
-                ["("] = 0,
-            };
-
-            Stack<string> opStack = new Stack<string>(); // 스택
-            List<string> output = new List<string>(); // 출력 리스트
-
-            foreach (string item in tokens)
-            {
-                if (ops.Contains(item) == false)
-                {
-                    // 2. 토큰이 피 연산자이면 출력 리스트에 넣는다.
-                    output.Add(item);
-                }
-                else if (item == "(")
-                {
-                    // 3. 토큰이 왼쪽 괄호이면 스택에 푸시한다.
-                    opStack.Push(item);
-                }
-                else if (item == ")")
-                {
-                    // 5. 토큰이 오른쪽 괄호이면 왼쪽 괄호가 나올 때까지 스택에서 팝하여 순서대로 리스트에 넣는다.
-                    while (opStack.Peek() != "(")
-                    {
-                        output.Add(opStack.Pop());
-                    }
-
-                    // 왼쪽 괄호 자체는 버린다.
-                    opStack.Pop();
-                }
-                else
-                {
-                    // 4. 토큰이 연산자이면, 
-                    while (opStack.Count != 0)
-                    {
-                        if (precs[opStack.Peek()] >= precs[item])
-                        {
-                            // 스택에 있는 연산자의 우선 순위가 자신보다 높거나 같다면 출력 리스트에 이어 붙여준다.
-                            output.Add(opStack.Pop());
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-
-                    opStack.Push(item);
-                }
+                Console.WriteLine(item);
             }
-
-            // 6. 더 이상 읽을 토큰이 없다면, 스택에서 연산자를 팝하여 붙인다.
-            while (opStack.Count != 0)
+            Console.WriteLine("==============================");
+            Array.Resize(ref buffer, buffer.Length + 1);
+            Array.Copy(buffer, 0, buffer, 1, buffer.Length - 1);
+            foreach (var item in buffer)
             {
-                output.Add(opStack.Pop());
+                Console.WriteLine(item);
             }
-
-            return string.Join(" ", output);
-        }
+        }        
     }
 }

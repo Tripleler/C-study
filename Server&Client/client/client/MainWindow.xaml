@@ -5,22 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Client" Height="450" Width="800"
+        Left="1000" Top="300"
+        Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="ListBoxItem">
+            <EventSetter Event="MouseDoubleClick" Handler="lbItem_DoubleClick"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Button Width="100" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30" Click="btnConnect_Click">
-            Connect
-        </Button>
-        <ListBox x:Name="lbFilelist"  Width="300" HorizontalAlignment="Right" Margin="30">
-            
+        <StackPanel Orientation="Horizontal">
+            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30" Click="btnConnect_Click" MaxHeight="50" MinHeight="30" MaxWidth="100" MinWidth="80">
+                Connect
+            </Button>
+            <Button x:Name="btnDirectDown" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30" Click="btnDirectDown_Click" MaxHeight="50" MinHeight="30" MaxWidth="100" MinWidth="80">
+                Inf download
+            </Button>
+        </StackPanel>
+        <ListBox x:Name="lbFilelist" Grid.RowSpan="2" Grid.Column="1" Margin="30">
+
         </ListBox>
-        <Button Width="100" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="30">
-            Download
+        <RichTextBox x:Name="txt_Status" Margin="30" Grid.Row="1" Grid.Column="0" IsReadOnly="True" VerticalScrollBarVisibility="Auto" MinHeight="200">
+            
+        </RichTextBox>
+        <ProgressBar x:Name="pb_Download" Grid.Row="2" Grid.ColumnSpan="2" MinHeight="20" Margin="30 0 30 10" Maximum="100" Minimum="0">
+            
+        </ProgressBar>
+        <Button x:Name="btn_Refresh" Grid.Column="1" Grid.Row="0" Margin="30" Width="50" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Click="btn_Refresh_Click">
+            <Image Source="./icon/refresh.png"/>
+
         </Button>
     </Grid>
 </Window>

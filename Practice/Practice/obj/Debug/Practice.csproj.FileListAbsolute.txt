@@ -70,3 +70,5 @@ C:\Users\Symation\source\repos\Practice\Practice\bin\Debug\ja\DevExpress.Pdf.v21
 C:\Users\Symation\source\repos\Practice\Practice\bin\Debug\ru\DevExpress.Pdf.v21.2.Core.resources.dll
 C:\Users\Symation\source\repos\Practice\Practice\obj\Debug\Practice.exe.licenses
 C:\Users\Symation\source\repos\Practice\Practice\obj\Debug\Practice.csproj.CopyComplete
+C:\Users\Symation\source\repos\Practice\Practice\obj\Debug\Window2.g.cs
+C:\Users\Symation\source\repos\Practice\Practice\obj\Debug\Window2.baml
