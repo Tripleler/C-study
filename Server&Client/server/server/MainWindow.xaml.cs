@@ -46,7 +46,7 @@ namespace server
             {
                 this.m_ClientSocket = new List<Socket>();
                 this.m_ServerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                IPEndPoint ipep = new IPEndPoint(IPAddress.Any, 9999);
+                IPEndPoint ipep = new IPEndPoint(IPAddress.Any, 9998);
                 this.m_ServerSocket.Bind(ipep);
                 this.m_ServerSocket.Listen(1000);
                 SocketAsyncEventArgs args = new SocketAsyncEventArgs();

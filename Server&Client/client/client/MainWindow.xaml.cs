@@ -36,8 +36,8 @@ namespace client
         private Socket cbSocket;
         private string strDir = null;
         private string strFileName = null;
-        private string HOST = "192.168.1.24";
-        private int PORT = 9999;
+        private string HOST = "192.168.1.2";
+        private int PORT = 9998;
         private byte[] bufferReceive = new byte[1024];
         private int nLoop = 0;
         private bool isInfinitDownload = false;
