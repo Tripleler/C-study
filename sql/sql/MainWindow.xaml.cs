@@ -373,7 +373,11 @@ namespace sql
 
         private void com_DB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            _Global.g_strDBPath = (com_DB.SelectedItem as ComboBoxItem).ToolTip.ToString();
+            var item = com_DB.SelectedItem as ComboBoxItem;
+            if (item.ToolTip != null)
+            {
+                _Global.g_strDBPath = item.ToolTip.ToString();
+            }
         }
 
         private void Interrupt_Thread()
