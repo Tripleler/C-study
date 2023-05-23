@@ -2,40 +2,150 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    Layout = null;
     ViewData["Title"] = "로그인";
 }
-@model User;
+@model Login;
 
+@*<main role="main" class="container" style="
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;"
+/>*@
+<!DOCTYPE html>
 
-<h1>@ViewData["Title"]</h1>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>TestWeb</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-<div class="row">
-    <div class="col-md-4">
-        <form class="form-horizontal" method="post" asp-controller="Account" asp-action="Register">
-            <div class="form-group">
-                <label style="margin:10px 0px 5px;"> 사용자 ID</label> <!-- Models의 User의 UserId에 매칭시켜 값을 넘겨준다. -->
-                <input type="text" class="form-control" asp-for="USER_ID" placeholder="사용자 ID 입력" />
-                <!-- span 태그를 이용해 asp-validation-for 를 이용하면 값을 넣지 않을경우 경고문이 뜬다. -->
-                <span class="text-danger" asp-validation-for="USER_ID"></span>
+    @* Uncomment to use the HtmlEditor control *@
+    @* <script src="https://unpkg.com/devextreme-quill@21_2/dist/dx-quill.min.js"></script> *@
+
+    @* Uncomment to use the Gantt control *@
+    @*<link href="~/css/devextreme/dx-gantt.css" rel="stylesheet" />*@
+
+    @* Uncomment to use the Diagram control *@
+    @*<link href="~/css/devextreme/dx-diagram.css" rel="stylesheet" />*@
+
+    <link href="~/css/devextreme/bootstrap.css" rel="stylesheet" />
+
+    <link href="~/css/devextreme/dx.common.css" rel="stylesheet" />
+
+    @* Predefined themes: https://js.devexpress.com/DevExtreme/Guide/Themes_and_Styles/Predefined_Themes/ *@
+    <link href="~/css/devextreme/dx.light.css" rel="stylesheet" />
+
+    @* Uncomment to use the Gantt control *@
+    @*<script src="~/js/devextreme/dx-gantt.js"></script>*@
+
+    @* Uncomment to use the Diagram control *@
+    @*<script src="~/js/devextreme/dx-diagram.js"></script>*@
+
+    <script src="~/js/devextreme/jquery.js"></script>
+    <script src="~/js/devextreme/bootstrap.js"></script>
+
+    @* Uncomment to use Globalize for localization *@
+    @* Docs: https://docs.devexpress.com/AspNetCore/400577#globalize *@
+    @*<script src="~/js/devextreme/cldr.js"></script>*@
+    @*<script src="~/js/devextreme/cldr/event.js"></script>*@
+    @*<script src="~/js/devextreme/cldr/supplemental.js"></script>*@
+    @*<script src="~/js/devextreme/cldr/unresolved.js"></script>*@
+    @*<script src="~/js/devextreme/globalize.js"></script>*@
+    @*<script src="~/js/devextreme/globalize/message.js"></script>*@
+    @*<script src="~/js/devextreme/globalize/number.js"></script>*@
+    @*<script src="~/js/devextreme/globalize/currency.js"></script>*@
+    @*<script src="~/js/devextreme/globalize/date.js"></script>*@
+
+    @* Uncomment to enable client-side export *@
+    @*<script src="~/js/devextreme/jszip.js"></script>*@
+
+    <script src="~/js/devextreme/dx.all.js"></script>
+
+    @* Uncomment to provide geo-data for the VectorMap control *@
+    @* Docs: https://js.devexpress.com/DevExtreme/Guide/Widgets/VectorMap/Providing_Data/#Data_for_Areas *@
+    @*<script src="~/js/devextreme/vectormap-data/world.js"></script>*@
+
+    <script src="~/js/devextreme/aspnet/dx.aspnet.mvc.js"></script>
+    <script src="~/js/devextreme/aspnet/dx.aspnet.data.js"></script>
+    <script src="~/js/Login.js" asp-append-version="true"></script>
+    <link href="~/css/Login.css" rel="stylesheet" />
+
+</head>
+
+<body class="setCenter">
+    <div class="setCenter" style="background-image:url('/img/background_login.png'); background-repeat:no-repeat; background-size:cover;">
+        <div class="setCenter">
+            <div class="MainFrame" id="panelDiv">
+                <div class="left">
+@*                    <form class="form-horizontal" method="post" asp-controller="Home" asp-action="Login" id="loginForm">
+                        <div class="form-group">
+                            <label style="margin:10px 0px 5px;"> 사용자 ID</label> <!-- Models의 User의 UserId에 매칭시켜 값을 넘겨준다. -->
+                            <input type="text" class="form-control" asp-for="USER_ID" placeholder="사용자 ID 입력" />
+                            <!-- span 태그를 이용해 asp-validation-for 를 이용하면 값을 넣지 않을경우 경고문이 뜬다. -->
+                            <span class="text-danger" asp-validation-for="USER_ID"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="margin:10px 0px 5px;"> 사용자 비밀번호</label>
+                            <input type="password" class="form-control" asp-for="USER_PWD" placeholder="사용자 비밀번호 입력" />
+                            <span class="text-danger" asp-validation-for="USER_PWD"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <button style="margin:10px 0px" type="button" class="btn btn-primary" onclick="add()">로그인</button>
+                            <a class="btn btn-warning" asp-controller="Home" asp-action="index">취소</a>
+                        </div>
+                        <h1>@ViewData["Title"]</h1>
+
+                    </form>*@
+                </div>
+                <div class="right" id="Test">
+                    <h1 style="margin:0px 0px 150px; font-family:'Times New Roman', Times, serif; font-style:italic; font-weight:500; letter-spacing:0.1em;">Log In</h1>
+                    <form class="form-horizontal" style="width:80%;" method="post" asp-controller="Home" asp-action="Login" id="loginForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" asp-for="USER_ID" placeholder="ID" />
+                            <!-- span 태그를 이용해 asp-validation-for 를 이용하면 값을 넣지 않을경우 경고문이 뜬다. -->
+                            <span class="text-danger" asp-validation-for="USER_ID"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control" asp-for="USER_PWD" placeholder="Password" />
+                            <span class="text-danger" asp-validation-for="USER_PWD"></span>
+                        </div>
+
+                        <div class="form-group" style="margin:20px 20px 20px 20px">
+                            <div class="setCenter">
+                                <button type="button" class="btn btnLogin" onclick="validateLogin()">로그인</button>
+                                <a class="btn btnBack" asp-controller="Home" asp-action="index">취소</a>
+                            </div>
+                        </div>
+                    </form>                    
+@*                    <div style="display:flex; flex-direction:row; width:100%;">
+                        <div class="left">
+                            <div class="setCenter" style="height:100%; width:100%;">
+                                <button class="btn btnTest">회전</button>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="setCenter" style="height:100%; width:100%;">
+                                <button class="btn btnTest2">글자가 회전</button>
+                            </div>
+                        </div>
+                        
+                    </div>*@
+                </div>
             </div>
-
-            <div class="form-group">
-                <label style="margin:10px 0px 5px;"> 사용자 비밀번호</label>
-                <input type="password" class="form-control" asp-for="USER_PWD" placeholder="사용자 비밀번호 입력" />
-                <span class="text-danger" asp-validation-for="USER_PWD"></span>
-            </div>
-@*
-            <div class="form-group">
-                <label style="margin:10px 0px 5px;"> 사용자 이름</label>
-                <input type="text" class="form-control" asp-for="UserName" placeholder="사용자 이름 입력" />
-                <span class="text-danger" asp-validation-for="UserName"></span>
-            </div>*@
-
-            <div class="form-group">
-                <button style="margin:10px 0px" type="submit" class="btn btn-primary">로그인</button>
-                <a class="btn btn-warning" asp-controller="Home" asp-action="index">취소</a>
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+</body>
+
+</html>
+
