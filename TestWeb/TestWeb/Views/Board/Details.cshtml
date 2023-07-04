@@ -1,0 +1,131 @@
+﻿@model TestWeb.Models.Board
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div style="display:flex; flex-direction:column; justify-content:flex-start; align-items:center; width:100%; min-height:59em; border-style:solid; border-radius:1em; border-color:lightgray; border-width:1px; margin:25px; padding:20px;">
+    <h1 style="text-align:center; margin:1em;">@Model.BoardTitle</h1>
+    <div style="width:100%; text-align:right">
+        <span style="float:left; margin: 0 0 0 3em; font-size:24px;">@Model.BoardWritter</span>
+        <a href="#" style="float:right; margin:0 4em 1em;" onclick="urlCopy()">주소 복사</a>
+    </div>
+    <hr style="width:90%;" />
+    <div style="display:flex; float:left; width:85%; flex-direction: column;">
+
+        @if (Model.FileNames != null)
+        {
+            int i = 0;
+            foreach (string fname in Model.FileNames.Split('\n'))
+            {
+                <p>
+                    @*<a href="#" onclick="location.href='/Board/FileDownload?BoardNo=@Model.BoardNo&idx=@i'">@fname</a>*@
+                    <a style="float:right;" href="#" onclick="FileDownload(@Model.BoardNo, @i, '@fname')">@fname</a>
+                </p>
+                i++;
+            }
+        }
+    </div>
+    <p style="height:max-content; width:80%; padding:2em; margin:0em 0em 0em 0em; font-size:16px; word-break:break-all; border-radius:20px;">@Model.BoardContent</p>
+    <hr style="width:90%;" />
+
+    <h3>댓글</h3>
+    @if (Model.Comments == null)
+    {
+        <div>댓글이 없습니다.</div>
+    }
+    else
+    {
+        foreach (var comment in Model.Comments)
+        {
+            <div>@comment.Content</div>
+        }
+    }
+
+    <hr />
+
+    <h3>댓글 작성</h3>
+    <form asp-action="CreateComment" method="post" style="width:80%;">
+        <input type="hidden" name="BoardNo" value="@Model.BoardNo" />
+        <div class="form-group">
+            <textarea class="form-control" name="content" style="resize:none; height:5em; font-size:16px;" ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="float:right">댓글 작성</button>
+    </form>
+
+    <div style="width:100%; display:flex; justify-content:left;">
+        <a asp-action="Index" asp-route-page="@ViewData["PAGE"]" style="margin:4em; float:left">목록으로</a>
+    </div>
+
+    @if (Model.BoardWritter.Trim() == Context.Session.GetString("User"))
+    {
+        <div style="float:right; margin:1em 0em 0em 0em; text-align:right;">
+            @(Html.DevExtreme().Button()
+                .Text("수정")
+                .Type(ButtonType.Normal)
+                .StylingMode(ButtonStylingMode.Outlined)
+                .Width(80)
+                .OnClick("edit")
+                )
+
+            @(Html.DevExtreme().Button()
+                .Text("삭제")
+                .Type(ButtonType.Danger)
+                .StylingMode(ButtonStylingMode.Contained)
+                .Width(80)
+                .OnClick("showInfo")
+                )
+            @(Html.DevExtreme().Popup()
+                    .ID("confirm")
+                    .Width(300)
+                    .Height(280)
+                    .ShowTitle(true)
+                    .Title("Notice")
+                    .DragEnabled(false)
+                    .CloseOnOutsideClick(true)
+                    .ShowCloseButton(false)
+                    .Position(positionConfig => positionConfig
+                    .Collision(PositionResolveCollision.Fit, PositionResolveCollision.Fit)
+                    )
+                    .Content("정말로 게시글을 삭제하시겠습니까?")
+
+                    .ToolbarItems(barItems =>
+                    {
+                        barItems.Add()
+                    .Toolbar(Toolbar.Bottom)
+                    .Location(ToolbarItemLocation.Before)
+                    .Widget(widget => widget.Button()
+                    .Text("Delete")
+                    .OnClick("notify")
+                    );
+                        barItems.Add()
+                    .Toolbar(Toolbar.Bottom)
+                    .Location(ToolbarItemLocation.After)
+                    .Widget(widget => widget.Button()
+                    .Text("Close")
+                    .OnClick(@<text>
+                        function hideInfo(data) {
+                        const popup = $("#confirm").dxPopup("instance");
+                        popup.hide();
+                        }
+                    </text>)
+                );
+                    })
+                )
+        </div>
+
+        <span id="BoardNo" style="display:none; font-size:1px;">@Model.BoardNo</span>
+        <script>
+            function notify(e) {
+                var buttonText = e.component.option("text");
+                DeleteBoard();
+            }
+            function showInfo(e) {
+                const popup = $("#confirm").dxPopup("instance");
+                popup.show();
+            }
+            function edit(e) {
+                toEdit(@Model.BoardNo);
+            }
+        </script>
+    }
+</div>

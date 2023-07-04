@@ -32,7 +32,7 @@ namespace sql
         {
             if (evInerruptClick != null)
             {
-                evInerruptClick(this);
+                evInerruptClick.Invoke(this);
             }
         }
     }

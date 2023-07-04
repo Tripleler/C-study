@@ -1,0 +1,161 @@
+﻿@model IEnumerable<TestWeb.Models.Board_view>
+
+@{
+    ViewData["Title"] = "Index";
+    int nCount = 0;
+    if (ViewData["COUNT"] != null)
+    {
+        nCount = Convert.ToInt32(ViewData["COUNT"]);
+    }
+    int nPage = Convert.ToInt32(ViewData["PAGE"]);
+}
+
+@*<form asp-controller="Board" asp-action="Index" method="get">
+    <p style="display:flex; align-content:end; justify-content:right;">
+                No.: <input type="text" name="id" />
+        <input type="submit" value="Filter" />
+        <a asp-action="Create" style="float:right; text-align:right;">글쓰기</a>
+    </p>
+</form>*@
+<table class="table border" style="margin: 20px; width:100%;">
+    <thead>
+        <tr>
+            <th style="width:60px;text-align:center;">
+                번호
+            </th>
+            <th style="text-align:center;">
+                제목
+            </th>
+            <th style="width:120px; text-align:center;">
+                작성자
+            </th>
+            <th style="width:60px; text-align:center;">
+                조회
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td style="text-align:center;">
+                        @Html.DisplayFor(modelItem => item.BoardNo)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.BoardNo" asp-route-page="@nPage" style="margin:2em;">@Html.DisplayFor(modelItem => item.BoardTitle)</a>
+                    </td>
+                    <td style="text-align:center;">
+                        @Html.DisplayFor(modelItem => item.BoardWritter)
+                    </td>
+                    <td style="text-align:center;">
+                        @Html.DisplayFor(modelItem => item.BoardViewCount)
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<div style="display:flex; flex-direction:row;">
+    @{
+        for (int i = 0; i < nCount; i += 10)
+        {
+            @(Html.DevExtreme().Button()
+            .Text((i / 10 + 1).ToString())
+            .Type(ButtonType.Normal)
+            .StylingMode(ButtonStylingMode.Outlined)
+            .Width(50)
+            .OnClick("toList")
+            )
+        }
+    }
+    <div style="position:absolute; right:2%; border-radius:15px; bottom:-1%;">
+        <a class="btn btnBack" asp-action="Create">글쓰기</a>
+    </div>
+</div>
+
+@*@(Html.DevExtreme().DataGrid()
+    .ID("gridContainer")
+    .ShowBorders(true)
+    .DataSource(Model)
+    .KeyExpr("ID")
+    .Columns(c =>
+    {
+        c.Add().DataField("BoardNo");
+        c.Add().DataField("BoardTitle");
+        c.Add().DataField("BoardWritter");
+        c.Add().DataField("BoardViewCount");
+    })
+)*@
+
+@*@(
+Html.DevExtreme().DataGrid()
+    .ID("gridContainer")
+    .DataSource(Model)
+    .RemoteOperations(false)
+    .AllowColumnReordering(false)
+    .RowAlternationEnabled(false)
+    .ShowBorders(true)
+    .OnContentReady("contentReady")
+    .Paging(p => p.PageSize(10))
+    .Pager(p => p
+        .ShowPageSizeSelector(true)
+        .AllowedPageSizes(new[] { 10, 25 })
+    )
+    .SearchPanel(s => s
+        .Visible(true)
+        .HighlightCaseSensitive(true)
+    )
+    .GroupPanel(g => g.Visible(false))
+    .Grouping(g => g.AutoExpandAll(false))
+    //.OnRowClick("onRowClick")
+    .Columns(columns =>
+    {
+        columns.Add()
+            .Caption("번호")
+            .DataField("BoardNo")
+            .DataType(GridColumnDataType.Number)
+            .Alignment(HorizontalAlignment.Center)
+            .AllowSorting(false)
+            .AllowSearch(false)
+            .Width(50);
+
+        columns.Add()
+            .DataField("BoardTitle")
+            .Caption("제목")
+            .AllowSorting(false)
+            .CellTemplate(@<text>
+                <a href="/Board/Details/<%- data.BoardNo %>" > <%- data.BoardTitle %></a>
+            </text>)
+            .DataType(GridColumnDataType.String);
+
+        columns.Add()
+            .DataField("BoardWritter")
+            .Caption("작성자")
+            .AllowSorting(false)
+            .Alignment(HorizontalAlignment.Center)
+            .DataType(GridColumnDataType.String)
+
+            .Width(100);
+
+        columns.Add()
+            .DataField("BoardViewCount")
+            .Caption("조회")
+            .AllowSorting(false)
+            .AllowSearch(false)
+            .DataType(GridColumnDataType.Number)
+            .Alignment(HorizontalAlignment.Center)
+            .Width(50);
+    })
+)*@
+
+<script>
+    var collapsed = false;
+    function contentReady(e) {
+        if (!collapsed) {
+            collapsed = true;
+            e.component.expandRow(["EnviroCare"]);
+        }
+    }
+</script>

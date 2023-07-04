@@ -8,9 +8,9 @@ namespace TestWeb.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly LoginContext _context;
+        private readonly MyContext _context;
 
-        public AccountController(LoginContext context)
+        public AccountController(MyContext context)
         {
             _context = context;
         }

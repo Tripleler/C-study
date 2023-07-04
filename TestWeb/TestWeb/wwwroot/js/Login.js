@@ -11,11 +11,11 @@ function validateLogin() {
         //var test = document.getElementById("Test");
         //test.style.transform = 'rotate(180deg)';
         //test.style.transitionDuration = "1s";
-        alert('아이디를 입력해 주세요');
+        alert('아이디를 입력해 주십시오');
         return;
     }
     else if (pw.value.length < 1) {
-        alert("비밀번호를 입력해 주세요");
+        alert("비밀번호를 입력해 주십시오");
         return;
     }
     else {

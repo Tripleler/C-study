@@ -1,0 +1,36 @@
+﻿@model TestWeb.Models.Board
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div style="border-style:solid; border-top:none; border-left:none; border-right:none; width:100%;">
+    <h1>글쓰기</h1>
+</div>
+
+
+<hr />
+<div class="row" style="width:100%;">
+    <div style="width:100%; margin:5em;">
+        <form id="editForm" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @*<label asp-for="BoardTitle" class="control-label">제목</label>*@
+                <input asp-for="BoardTitle" class="form-control" placeholder="제목을 입력해 주십시오" style="font-size: 24px;" />
+            </div>
+            <div class="form-group">
+                @*<label asp-for="BoardContent" class="control-label">내용</label>*@
+                <textarea asp-for="BoardContent" class="form-control" placeholder="내용을 입력하세요" style="resize:none; height:30em; font-size:16px;"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="button" value="수정" class="btn btn-primary" onclick="EditBoard()" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">목록으로</a>
+</div>
+<h6 id="BoardNo" style="display:none;">@Model.BoardNo</h6>
+    

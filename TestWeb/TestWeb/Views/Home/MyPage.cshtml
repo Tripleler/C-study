@@ -1,0 +1,38 @@
+﻿@model TestWeb.Models.Register
+@{
+}
+<div style="width:60%; display:flex; justify-content:center; align-items:center; min-height:50em;" >
+    <form id="MyPageForm" class="form-horizontal" style="width:90%;" method="post" asp-controller="Home" asp-action="Register_temp">
+        <div class="form-group enter">
+            <span style="width:120px; margin:0px 10px; text-align:left;">이름</span>
+            <input type="text" class="form-control" asp-for="NAME" placeholder="이름" style="border-radius:10px; width:25em; margin:0 2em 0 0;">
+        </div>
+        @*<div class="form-group enter">
+            <span style="width:120px; margin:0px 10px; text-align:left;">아이디</span>
+            <input id="ID" type="text" class="form-control" asp-for="USER_ID" placeholder="ID" style="border-radius:10px; width:25em;" onchange="toOrigin()" />
+            <button id="btnCheck" type="button" class="btn btnOrigin" onclick="validateID()" style="margin:0 0 0 1em;">중복확인</button>
+        </div>*@
+        <div class="form-group enter">
+            <span style="width:120px; margin:0px 10px; text-align:left;">비밀번호</span>
+            <input type="password" class="form-control" asp-for="USER_PWD" placeholder="Password" style="border-radius:10px; width:25em;" />
+        </div>
+
+        <div class="form-group enter">
+            <span style="width:120px; margin:0px 10px; text-align:left;">비밀번호 확인</span>
+            <input type="password" class="form-control" asp-for="USER_PWD_CHECK" placeholder="비밀번호 확인" style="border-radius:10px; width:25em;" />
+        </div>
+
+        <div class="form-group enter">
+            <span style="width:120px; margin:0px 10px; text-align:left;">이메일</span>
+            <input type="text" class="form-control" asp-for="EMAIL_ADRESS" placeholder="E-mail" style="border-radius:10px; width:25em;" />
+        </div>
+
+        <div style="margin:10px 0px 5px;" class="form-group setCenter">
+            <button type="button" class="btn btnLogin" onclick="validateMyPage()">수정하기</button>
+            <a class="btn btnBack" onclick="toBoard()">취소</a>
+        </div>
+    </form>
+</div>
+<script>
+
+</script>

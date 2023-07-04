@@ -1,13 +1,12 @@
-﻿@{
+﻿@{   
+    if (Context.Request.Path != "/Home")
+    {
+        if (Context.Session.GetString("User") == null)
+        {
+            Context.Response.Redirect("/Home");
+        }
+    }
+
     Layout = "_DevExtremeLayout";
     //Layout = "_Layout";
-
-    if (Context.Request.Path != "/Home/Index")
-    {
-        //if (Context.Session.GetString("userID") == null)
-        //{
-        //    Context.Response.Redirect("/Home/Login");
-        //}
-    }
-    
 }

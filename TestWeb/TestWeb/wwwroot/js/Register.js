@@ -13,15 +13,15 @@ function validateRegister() {
     const regex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 
     if (name.value.length < 1) {
-        alert("이름을 입력해 주세요");
+        alert("이름을 입력해 주십시오");
         return;
     }
     else if (id.value.length < 1) {
-        alert('아이디를 입력해 주세요');
+        alert('아이디를 입력해 주십시오');
         return;
     }
     else if (pw.value.length < 1) {
-        alert("비밀번호를 입력해 주세요");
+        alert("비밀번호를 입력해 주십시오");
         return;
     }
     else if (pwCheck.value != pw.value) {
@@ -29,11 +29,11 @@ function validateRegister() {
         return;
     }
     else if (email.value.length < 1) {
-        alert("이메일을 입력해 주세요");
+        alert("이메일을 입력해 주십시오");
         return;
     }
     else if (!regex.test(email.value)) {
-        alert("이메일형식에 맞게 입력해주세요");
+        alert("이메일형식에 맞게 입력해주십시오");
         return;
     }
     else
@@ -43,22 +43,22 @@ function validateRegister() {
             url: "/Home/Register_temp",
             type: "post",
             data: {
-                NAME = name.value,
+                NAME: name.value,
                 USER_ID: id.value,
                 USER_PWD: pw.value,
                 USER_PWD_CHECK: pwCheck.value,
-                EMAIL = email.value,
+                EMAIL : email.value,
             },
             success: function (result) {
-                if (result == "Sucess") {
-
+                if (result == "Success") {
+                    Test();
                 }
                 else {
-
+                    alert("회원가입 실패")
                 }
             },
             error: function (err) {
-
+                alert(err);
             }
         })
     }
@@ -75,3 +75,27 @@ function Test() {
     form2.setAttribute("style", "position:absolute; left:50%;display: flex; align-items: center; justify-content: center; opacity:0;");
     form2.setAttribute("style", "position:absolute; left:50%;display: flex; align-items: center; justify-content: center;  transition: all 1s linear; opacity:1;");
 }
+
+$(function () {
+    $("#registerForm").on("submit", function (e){
+        e.preventDefault();
+        var formData = $(this).serialize();
+        $.ajax({
+            url: "/Home/Register_temp",
+            type: "post",
+            data: formData,
+            success: function (result) {
+                if (result == "Sucess") {
+                    Test();
+                }
+                else {
+                    alert("회원가입 실패")
+                }
+            },
+            error: function (err) {
+
+            }
+        })
+    })
+
+})

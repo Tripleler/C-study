@@ -78,7 +78,7 @@
                 </StackPanel>
             </ScrollViewer>
         </Border>    
-        
+        <!--회원가입화면-->
         <Border x:Name="lay_Register" Visibility="Collapsed" Margin="10,10,10,10" Grid.Row="0" BorderThickness="0" CornerRadius="10" Background="LightGoldenrodYellow">
             <ScrollViewer VerticalScrollBarVisibility="Hidden">
                 <StackPanel Orientation="Vertical" Margin="40,35,40,5">

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZyDE9/1oevPOxvtzOmbYPfwsh5oI7btEk7hgbACi1wM=",
+  "Hash": "xQBVDX2Om7xcRmLahuGSZdAPHk+jT/wVimTeLbAWMlo=",
   "Source": "TestWeb",
   "BasePath": "_content/TestWeb",
   "Mode": "Default",
@@ -1088,6 +1088,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\icons\\dxiconsmaterial.woff2"
     },
     {
+      "Identity": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\css\\Index.css",
+      "SourceId": "TestWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\",
+      "BasePath": "_content/TestWeb",
+      "RelativePath": "css/Index.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Index.css"
+    },
+    {
       "Identity": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\css\\Login.css",
       "SourceId": "TestWeb",
       "SourceType": "Discovered",
@@ -1120,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\css\\Test.css",
+      "SourceId": "TestWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\",
+      "BasePath": "_content/TestWeb",
+      "RelativePath": "css/Test.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Test.css"
     },
     {
       "Identity": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\favicon.ico",
@@ -1188,6 +1222,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\lock.png"
+    },
+    {
+      "Identity": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\img\\logo.png",
+      "SourceId": "TestWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\",
+      "BasePath": "_content/TestWeb",
+      "RelativePath": "img/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo.png"
     },
     {
       "Identity": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\js\\devextreme\\aspnet\\dx.aspnet.data.js",
@@ -2261,6 +2312,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-utils\\dx.vectormaputils.node.js"
     },
     {
+      "Identity": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\js\\Index.js",
+      "SourceId": "TestWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\",
+      "BasePath": "_content/TestWeb",
+      "RelativePath": "js/Index.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Index.js"
+    },
+    {
       "Identity": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\js\\Login.js",
       "SourceId": "TestWeb",
       "SourceType": "Discovered",
@@ -2310,6 +2378,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\js\\Test.js",
+      "SourceId": "TestWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\",
+      "BasePath": "_content/TestWeb",
+      "RelativePath": "js/Test.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Test.js"
     },
     {
       "Identity": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

@@ -5,8 +5,16 @@
       "PackagePath": "staticwebassets\\TestWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\css\\Index.css",
+      "PackagePath": "staticwebassets\\css\\Index.css"
+    },
+    {
       "Id": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\css\\Login.css",
       "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\css\\Test.css",
+      "PackagePath": "staticwebassets\\css\\Test.css"
     },
     {
       "Id": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\css\\devextreme\\bootstrap.css",
@@ -273,12 +281,24 @@
       "PackagePath": "staticwebassets\\img\\lock.png"
     },
     {
+      "Id": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\js\\Index.js",
+      "PackagePath": "staticwebassets\\js\\Index.js"
+    },
+    {
       "Id": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\js\\Login.js",
       "PackagePath": "staticwebassets\\js\\Login.js"
     },
     {
       "Id": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\js\\Register.js",
       "PackagePath": "staticwebassets\\js\\Register.js"
+    },
+    {
+      "Id": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\js\\Test.js",
+      "PackagePath": "staticwebassets\\js\\Test.js"
     },
     {
       "Id": "C:\\Users\\Symation\\source\\repos\\TestWeb\\TestWeb\\wwwroot\\js\\devextreme\\aspnet\\dx.aspnet.data.js",

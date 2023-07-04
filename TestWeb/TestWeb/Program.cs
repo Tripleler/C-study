@@ -8,16 +8,22 @@ builder.Services.AddDbContext<TestWebContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TestWebContext") ?? throw new InvalidOperationException("Connection string 'TestWebContext' not found.")));
 
 //var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<LoginContext>(options =>
+builder.Services.AddDbContext<MyContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Login_Connection") ?? throw new InvalidOperationException("Connection string 'LoginContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// 대소문자구분
+builder.Services.AddRouting(option =>
+{
+    option.LowercaseUrls = true;
+});
+
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(option =>
 {
-    option.IdleTimeout = TimeSpan.FromSeconds(60);
+    option.IdleTimeout = TimeSpan.FromSeconds(30 * 60);
     option.Cookie.HttpOnly = true;
     option.Cookie.IsEssential = true;
 });

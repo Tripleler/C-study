@@ -87,7 +87,7 @@
                     @*<h1>@ViewData["Title"]</h1>*@
                     <h1 style="margin:0px 0px 50px; font-family:'Times New Roman', Times, serif; font-style:italic; font-weight:500; letter-spacing:0.1em;">Sign In</h1>
                     <input type="hidden" id="errorMsg" value="@strErr"/>
-                    <form class="form-horizontal" style="width:90%;" method="post" asp-controller="Home" asp-action="Register" id="registerForm">
+                    <form class="form-horizontal" style="width:90%;" method="post" asp-controller="Home" asp-action="Register_temp" id="registerForm">
                         <div class="form-group enter">
                             <span style="width:120px; margin:0px 10px; text-align:left;">이름</span>
                             <input type="text" class="form-control" asp-for="NAME" placeholder="이름" style="border-radius:10px">
@@ -163,6 +163,29 @@
             
         </div>
     </div>
-</body>
+<!--    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $("#registerForm").on("submit", function (e)){
+            e.preventDefault();
+            var formData = $(this).serialize();
+            $.ajax({
+                url: "/Home/Register_temp",
+                type: "post",
+                data: formData,
+                success: function (result) {
+                    if (result == "Sucess") {
+                        Test();
+                    }
+                    else {
 
+                    }
+                },
+                error: function (err) {
+
+                }
+            })
+        }
+    </script>
+    -->
+</body>
 </html>

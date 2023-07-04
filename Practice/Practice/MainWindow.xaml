@@ -98,7 +98,8 @@
         <Button Grid.Row="2" Grid.Column="0" 
                 Name="submit" Margin="2"
                 FontSize="14" FontWeight="Light"
-                Background="Blue">
+                Background="Blue"
+                Click="submit_Click" Content="Submit">
             <!--<Button.Background>
                 <LinearGradientBrush StartPoint="0,0.5" 
                             EndPoint="1,0.5">
@@ -106,7 +107,6 @@
                     <GradientStop Color="White" Offset="0.9" />
                 </LinearGradientBrush>
             </Button.Background>-->
-            View message
         </Button>
 
         <Button Grid.Row="2" Grid.Column="1" 
