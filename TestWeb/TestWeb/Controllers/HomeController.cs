@@ -22,6 +22,40 @@ namespace TestWeb.Controllers
             _context = context;
         }
 
+        public string Login(string USER_ID, string USER_PWD)
+        {
+            if (USER_ID.Length < 1)
+            {
+                return "아이디를 입력해 주십시오";
+            }
+            else if (USER_PWD.Length < 1)
+            {
+                return "비밀번호를 입력해 주십시오";
+            }
+            else
+            {
+                try
+                {
+                    Login? user = _context.Logins
+                    .FirstOrDefault(x => x.USER_ID.Equals(USER_ID) && x.USER_PWD.Equals(USER_PWD));
+                    if (user == null)
+                    {
+                        return "Fail";
+                    }
+                    else
+                    {
+                        HttpContext.Session.SetString("User", USER_ID);
+                        return "Success";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return "Fail";
+                }
+            }
+        }
+
         public string EditUser(string id)
         {
             Register_Input? model = _context.Registers.Find(id);
@@ -170,39 +204,39 @@ namespace TestWeb.Controllers
             return View();
         }
 
-        public IActionResult Login()
-        {
-            return View();
-        }
+        //public IActionResult Login()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        public IActionResult Login(Login model)
-        {
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    Login? user = _context.Logins
-                    .FirstOrDefault(x => x.USER_ID.Equals(model.USER_ID) && x.USER_PWD.Equals(model.USER_PWD));
+        //[HttpPost]
+        //public IActionResult Login(Login model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            Login? user = _context.Logins
+        //            .FirstOrDefault(x => x.USER_ID.Equals(model.USER_ID) && x.USER_PWD.Equals(model.USER_PWD));
 
-                    if (user != null)
-                    {
-                        HttpContext.Session.SetString("User", model.USER_ID);
+        //            if (user != null)
+        //            {
+        //                HttpContext.Session.SetString("User", model.USER_ID);
                         
-                        return RedirectToAction("Index", "Board");
-                    }
-                    else
-                    {
-                        return RedirectToAction("Fail", "Account");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-            }
-            return View();
-        }
+        //                return RedirectToAction("Index", "Board");
+        //            }
+        //            else
+        //            {
+        //                return RedirectToAction("Fail", "Account");
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Debug.WriteLine(ex.Message);
+        //        }
+        //    }
+        //    return View();
+        //}
 
         public IActionResult Logout()
         {

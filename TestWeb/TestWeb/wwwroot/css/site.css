@@ -178,3 +178,7 @@ div.enter {
     cursor: pointer;
     color: #999;
 }
+
+.hidden{
+    display:none;
+}

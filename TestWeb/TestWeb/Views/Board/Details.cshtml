@@ -28,26 +28,74 @@
     <p style="height:max-content; width:80%; padding:2em; margin:0em 0em 0em 0em; font-size:16px; word-break:break-all; border-radius:20px;">@Model.BoardContent</p>
     <hr style="width:90%;" />
 
-    <h3>댓글</h3>
+    <h4 style="width:85%; font-weight:bold; margin: 0 0 1em 0;">댓글</h4>
     @if (Model.Comments == null)
     {
         <div>댓글이 없습니다.</div>
     }
     else
     {
-        foreach (var comment in Model.Comments)
-        {
-            <div>@comment.Content</div>
-        }
+        int j = 0;
+        <div style="width:85%;">
+            @foreach (var comment in Model.Comments.Where(x => x.Class == 0))
+            {
+                <span style="font-weight:bold">@comment.Writter</span>
+                <br />
+                <span style="display:inline-block; margin:1em 0 1em 0;">@comment.Content</span>
+                <br />
+                <span style="margin:0 1em 0 0; color:#aaaaaa">@comment.CreateDate</span>
+                <a href="#" style="color:#aaaaaa" onclick="ToggleReply(event, @j)">답글쓰기</a>
+                <hr style="width:100%;" />
+                <div id="reply@(j)" class="hidden reply" style="margin:0 0 0 5em;">
+                    <div>
+                        <form asp-action="CreateCommentReply" method="post">
+                            <input type="hidden" name="GroupNum" value="@comment.GroupNum" />
+                            <input type="hidden" name="BoardNo" value="@Model.BoardNo" />
+                            <div class="form-group">
+                                <textarea class="form-control" name="content" placeholder="@comment.Writter 님께 답글쓰기" style="resize:none; height:5em; font-size:16px;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="float:right">답글 작성</button>
+                        </form>
+                    </div>
+                    <hr style="width:100%;" />
+                </div>
+                j++;
+                foreach (var reply in Model.Comments.Where(x => x.Class == 1 && x.GroupNum == comment.GroupNum))
+                {
+                    <div style="margin:0 0 0 5em;">
+                        <span style="font-weight:bold">@reply.Writter</span>
+                        <br />
+                        <span style="display:inline-block; margin:1em 0 1em 0;">@reply.Content</span>
+                        <br />
+                        <span style="margin:0 1em 0 0; color:#aaaaaa">@reply.CreateDate</span>
+                        <a href="#" style="color:#aaaaaa" onclick="ToggleReply(event, @(j))">답글쓰기</a>
+                        <hr style="width:100%;" />
+                    </div>
+                    <div id="reply@(j)" class="hidden reply" style="margin:0 0 0 5em;">
+                        <div>
+                            <form asp-action="CreateCommentReply" method="post">
+                                <input type="hidden" name="GroupNum" value="@comment.GroupNum" />
+                                <input type="hidden" name="BoardNo" value="@Model.BoardNo" />
+                                <div class="form-group">
+                                    <textarea class="form-control" name="content" placeholder="@reply.Writter 님께 답글쓰기" style="resize:none; height:5em; font-size:16px;"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="float:right">답글 작성</button>
+                            </form>
+                        </div>
+                        <hr style="width:100%;" />
+                    </div>
+                    j++;
+                }
+            }
+        </div>
     }
 
     <hr />
 
-    <h3>댓글 작성</h3>
-    <form asp-action="CreateComment" method="post" style="width:80%;">
+    <form asp-action="CreateComment" method="post" style="width:85%;">
         <input type="hidden" name="BoardNo" value="@Model.BoardNo" />
         <div class="form-group">
-            <textarea class="form-control" name="content" style="resize:none; height:5em; font-size:16px;" ></textarea>
+            <textarea class="form-control" name="content" style="resize:none; height:5em; font-size:16px;"></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="float:right">댓글 작성</button>
     </form>

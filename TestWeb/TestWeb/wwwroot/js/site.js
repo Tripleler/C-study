@@ -502,3 +502,17 @@ function fnSendFile() {
         }
     });
 }
+
+function ToggleReply(e, idx) {
+    e.preventDefault();
+    var reply = document.getElementById('reply' + idx);
+    var otherReplies = document.getElementsByClassName('reply');
+
+    for (var i = 0; i < otherReplies.length; i++) {
+        if (otherReplies[i] !== reply) {
+            otherReplies[i].classList.add('hidden');
+        }
+    }
+
+    reply.classList.toggle('hidden');
+}

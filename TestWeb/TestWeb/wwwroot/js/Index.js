@@ -116,7 +116,7 @@ function validateLogin() {
     }
     else {
         $.ajax({
-            url: "/Board/Login_temp",
+            url: "/Home/Login",
             type: "post",
             data: {
                 USER_ID: id.value,

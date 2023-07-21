@@ -24,6 +24,7 @@ namespace TestWeb.Controllers
 
         public IActionResult Index(int page = 1)
         {
+            if (page < 1) page = 1;
             var board = from u in _context.BoardViews select u;
             board = board.OrderByDescending(x => x.BoardNo);
             int nCount = board.Count();  // 게시글 총 개수
@@ -49,37 +50,37 @@ namespace TestWeb.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(BoardSend model)
-        {
-            if (ModelState.IsValid)
-            {
-                Board board = new Board();
-                try
-                {
-                    board.BoardWritter = HttpContext.Session.GetString("User");
-                }
-                catch (Exception)
-                {
-                    return RedirectToAction("Index", "Home");
-                }
-                board.BoardTitle = model.BoardTitle;
-                board.BoardContent = model.BoardContent;
-                board.BoardViewCount = 0;
-                try
-                {
-                    _context.Boards.Add(board);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction("Index", "Board");
-                }
-                catch (Exception ex)
-                {
-                    return NotFound();
-                }
-            }
-            return new EmptyResult();
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create(BoardSend model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        Board board = new Board();
+        //        try
+        //        {
+        //            board.BoardWritter = HttpContext.Session.GetString("User");
+        //        }
+        //        catch (Exception)
+        //        {
+        //            return RedirectToAction("Index", "Home");
+        //        }
+        //        board.BoardTitle = model.BoardTitle;
+        //        board.BoardContent = model.BoardContent;
+        //        board.BoardViewCount = 0;
+        //        try
+        //        {
+        //            _context.Boards.Add(board);
+        //            await _context.SaveChangesAsync();
+        //            return RedirectToAction("Index", "Board");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            return NotFound();
+        //        }
+        //    }
+        //    return new EmptyResult();
+        //}
 
         public async Task<string> AddBoard(BoardSend boardsend)
         {
@@ -367,39 +368,7 @@ namespace TestWeb.Controllers
             }
         }
 
-        public string Login_temp(string USER_ID, string USER_PWD)
-        {
-            if (USER_ID.Length < 1)
-            {
-                return "아이디를 입력해 주십시오";
-            }
-            else if (USER_PWD.Length < 1)
-            {
-                return "비밀번호를 입력해 주십시오";
-            }
-            else
-            {
-                try
-                {
-                    Login? user = _context.Logins
-                    .FirstOrDefault(x => x.USER_ID.Equals(USER_ID) && x.USER_PWD.Equals(USER_PWD));
-                    if (user == null)
-                    {
-                        return "Fail";
-                    }
-                    else
-                    {
-                        HttpContext.Session.SetString("User", USER_ID);
-                        return "Success";
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    return "Fail";
-                }
-            }
-        }
+        
 
         [HttpGet]
         public IActionResult Details(int id, int page)
@@ -428,7 +397,7 @@ namespace TestWeb.Controllers
             //    return View(model);
             //}
             //return NotFound();
-            Board? model = _context.Boards.Find(id);
+            Board? model = _context.Boards.Include(x=>x.Comments).FirstOrDefault(x => x.BoardNo == id);
             if (model != null)
             {
                 try
@@ -470,7 +439,8 @@ namespace TestWeb.Controllers
             }
             if (string.IsNullOrEmpty(writter))
                 return RedirectToAction("Index", "Home");
-            var post = _context.Boards.Find(BoardNo);
+
+            var post = _context.Boards.Include(x => x.Comments).FirstOrDefault(x => x.BoardNo == BoardNo);
             if (post == null)
             {
                 return NotFound();
@@ -482,7 +452,46 @@ namespace TestWeb.Controllers
                 Content = content,
                 Writter = writter,
                 Class = 0,
-                GroupNum = post.Comments.Count,
+                GroupNum = post.Comments.Count(x => x.Class == 0),
+                CreateDate = DateTime.Now,
+            };
+
+            //_context.Comments.Add(comment);
+            post.Comments.Add(comment);  // Error
+            _context.SaveChanges();
+
+            return RedirectToAction("Details", new { id = BoardNo });
+        }
+
+        public IActionResult CreateCommentReply(int BoardNo, int GroupNum, string content)
+        {
+            // postID = 게시글 번호
+            // Id = 댓글 작성자
+            string writter = string.Empty;
+            try
+            {
+                writter = HttpContext.Session.GetString("User");
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            if (string.IsNullOrEmpty(writter))
+                return RedirectToAction("Index", "Home");
+
+            var post = _context.Boards.Find(BoardNo);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            var comment = new Comment
+            {
+                BoardNo = BoardNo,
+                Content = content,
+                Writter = writter,
+                Class = 1,
+                GroupNum = GroupNum,
                 CreateDate = DateTime.Now,
             };
 
